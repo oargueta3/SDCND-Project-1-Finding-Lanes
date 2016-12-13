@@ -1,16 +1,27 @@
-#**Finding Lane Lines on the Road** 
+# **Project 1: Finding Lane Lines on the Road**   
+#### Udacity's Self-Driving Car Nanodegree
+
+### Objective
+When we drive, the lines on the road are the visual reference we use to steer vehicles on roads and highways. For a self-driving cars being able to make use of this reference is an important tool to navigate our current road infractructure. The objective of this project was to explore a simple methods to detect lane lines using Computer Vision techniques with Python and a dedicated library called OpenCV (Open-Computer Vision). The algorithm used and the results will be discussed in the sections below.
+
+### Algorithm Overview
+A pipeline was developed to process single images and overlay the detected lane lines. This pipeline was then applied to a video stream, which is only a collection of images. The foundation of this algorithm rest on the ability to detect edges on an image, in other words, extract just the outlines of the different contents in an image.
 <img src="laneLines_thirdPass.jpg" width="480" alt="Combined Image" />
 
-When we drive, we use our eyes to decide where to go.  The lines on the road that show us where the lanes are act as our constant reference for where to steer the vehicle.  Naturally, one of the first things we would like to do in developing a self-driving car is to automatically detect lane lines using an algorithm.
+In the figure above you are able to see edges of the lane markings on the road, but you are also able to see the edes of
+###### Algorithm to find lane lines on images:
+1. Change image to gray scale
+2. Apply Gaussian Blur to reduce image noise
+3. Apply Canny Edge Detection
+4. Mask the resulting image to only include the region of interest
+5. Apply Hough Transform to extract Hough lines
+6. Draw extrapolated lines to extend over the detected lane markings
 
-In this project you will detect lane lines in images using Python and OpenCV.  OpenCV means "Open-Source Computer Vision", which is a package that has many useful tools for analyzing images.  
+### Results
 
-**Step 1:** Getting setup with Python
+### Useful References
 
-To do this project, you will need Python 3 along with the numpy, matplotlib, and OpenCV libraries, as well as Jupyter Notebook installed. 
-
-We recommend downloading and installing the Anaconda Python 3 distribution from Continuum Analytics because it comes prepackaged with many of the Python dependencies you will need for this and future projects, makes it easy to install OpenCV, and includes Jupyter Notebook.  Beyond that, it is one of the most common Python distributions used in data analytics and machine learning, so a great choice if you're getting started in the field.
-
+### Enviroment Setup
 Choose the appropriate Python 3 Anaconda install package for your operating system <A HREF="https://www.continuum.io/downloads" target="_blank">here</A>.   Download and install the package.
 
 If you already have Anaconda for Python 2 installed, you can create a separate environment for Python 3 and all the appropriate dependencies with the following command:
@@ -61,8 +72,11 @@ and check that the install worked:
 
 You will complete this project in a Jupyter notebook.  If you are unfamiliar with Jupyter Notebooks, check out <A HREF="https://www.packtpub.com/books/content/basics-jupyter-notebook-and-python" target="_blank">Cyrille Rossant's Basics of Jupyter Notebook and Python</A> to get started.
 
-Jupyter is an ipython notebook where you can run blocks of code and see results interactively.  All the code for this project is contained in a Jupyter notebook. To start Jupyter in your browser, run the following command at the terminal prompt (be sure you're in your Python 3 environment!):
+
 
 `> jupyter notebook`
-
-A browser window will appear showing the contents of the current directory.  Click on the file called "P1.ipynb".  Another browser window will appear displaying the notebook.  Follow the instructions in the notebook to complete the project.  
+```sh
+$ cd docs
+$ install -d
+$ conda
+```
